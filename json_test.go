@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
+	"github.com/bytedance/sonic"
 	"github.com/json-iterator/go"
 )
 
@@ -103,5 +104,33 @@ func Benchmark_jsoniter_marshal_struct(b *testing.B) {
 	sut := sampleStruct
 	for i := 0; i < b.N; i++ {
 		_, _ = jsonIter.Marshal(sut)
+	}
+}
+
+func Benchmark_sonic_unmarshal_map(b *testing.B) {
+	sut := map[string]interface{}{}
+	for i := 0; i < b.N; i++ {
+		_ = sonic.Unmarshal(sampleJSON, &sut)
+	}
+}
+
+func Benchmark_sonic_unmarshal_struct(b *testing.B) {
+	sut := person{}
+	for i := 0; i < b.N; i++ {
+		_ = sonic.Unmarshal(sampleJSON, &sut)
+	}
+}
+
+func Benchmark_sonic_marshal_map(b *testing.B) {
+	sut := sampleMap
+	for i := 0; i < b.N; i++ {
+		_, _ = sonic.Marshal(sut)
+	}
+}
+
+func Benchmark_sonic_marshal_struct(b *testing.B) {
+	sut := sampleStruct
+	for i := 0; i < b.N; i++ {
+		_, _ = sonic.Marshal(sut)
 	}
 }
