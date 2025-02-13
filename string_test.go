@@ -10,11 +10,27 @@ import (
 )
 
 var (
+	emptyStr = ""
 	shortStr = "short"
 	shortLen = len(shortStr)
 	longStr  = strings.Repeat("long ", 100)
 	longLen  = len(longStr)
 )
+
+func Benchmark_string_conditional_assign_short(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		//goland:noinspection GoBoolExpressions
+		if "" != emptyStr {
+			_ = shortStr
+		}
+	}
+}
+
+func Benchmark_string_unconditional_assign_short(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = shortStr
+	}
+}
 
 func Benchmark_string_concat_short(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -157,6 +173,21 @@ func Benchmark_string_builder_grown_FormatFloat_short(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
 		sb.WriteString(strconv.FormatFloat(1, 'f', 10, 64))
+	}
+}
+
+func Benchmark_string_conditional_assign_long(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		//goland:noinspection GoBoolExpressions
+		if "" != emptyStr {
+			_ = longStr
+		}
+	}
+}
+
+func Benchmark_string_unconditional_assign_long(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = longStr
 	}
 }
 
