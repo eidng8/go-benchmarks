@@ -2,7 +2,8 @@
   <configuration default="false" name="go bench" type="GoTestRunConfiguration" factoryName="Go Test">
     <module name="benchmarks" />
     <working_directory value="$PROJECT_DIR$" />
-    <kind value="PACKAGE" />
+    <go_parameters value="-count=10 -cpu=16 -timeout 60m" />
+    <kind value="DIRECTORY" />
     <package value="github.com/eidng8/benchmarks" />
     <directory value="$PROJECT_DIR$" />
     <filePath value="$PROJECT_DIR$" />

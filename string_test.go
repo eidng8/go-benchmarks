@@ -334,3 +334,45 @@ func Benchmark_string_builder_grown_FormatFloat_long(b *testing.B) {
 		sb.WriteString(strconv.FormatFloat(1, 'f', 10, 64))
 	}
 }
+
+func Benchmark_string_compare_short(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		//goland:noinspection GoBoolExpressions
+		_ = shortStr == shortStr
+	}
+}
+
+func Benchmark_string_compare_long(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		//goland:noinspection GoDfaConstantCondition
+		_ = longStr == longStr
+	}
+}
+
+func Benchmark_string_HasPrefix_short(b *testing.B) {
+	prefix := shortStr[:3]
+	for i := 0; i < b.N; i++ {
+		strings.HasPrefix(shortStr, prefix)
+	}
+}
+
+func Benchmark_string_HasPrefix_long(b *testing.B) {
+	prefix := longStr[:100]
+	for i := 0; i < b.N; i++ {
+		strings.HasPrefix(longStr, prefix)
+	}
+}
+
+func Benchmark_string_HasSuffix_short(b *testing.B) {
+	prefix := shortStr[:3]
+	for i := 0; i < b.N; i++ {
+		strings.HasSuffix(shortStr, prefix)
+	}
+}
+
+func Benchmark_string_HasSuffix_long(b *testing.B) {
+	prefix := longStr[:100]
+	for i := 0; i < b.N; i++ {
+		strings.HasSuffix(longStr, prefix)
+	}
+}
