@@ -15,6 +15,105 @@ var (
 	shortLen = len(shortStr)
 	longStr  = strings.Repeat("long ", 100)
 	longLen  = len(longStr)
+	shortArr = []string{"short", "short", "short"}
+	longArr  = []string{
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+		"long", "long", "long", "long", "long", "long", "long", "long", "long",
+	}
 )
 
 func Benchmark_string_conditional_assign_short(b *testing.B) {
@@ -374,5 +473,47 @@ func Benchmark_string_HasSuffix_long(b *testing.B) {
 	prefix := longStr[:100]
 	for i := 0; i < b.N; i++ {
 		strings.HasSuffix(longStr, prefix)
+	}
+}
+
+func Benchmark_strings_join_short(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = strings.Join(shortArr, ",")
+	}
+}
+
+func Benchmark_strings_join_long(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = strings.Join(longArr, ",")
+	}
+}
+
+func Benchmark_strings_join_short_by_string_build(b *testing.B) {
+	var sb strings.Builder
+	sb.Grow(65536)
+	b.ResetTimer()
+	sb.WriteString(shortArr[0])
+	for i := 0; i < b.N; i++ {
+		sb.Reset()
+		for _, s := range shortArr[1:] {
+			sb.WriteString(",")
+			sb.WriteString(s)
+		}
+		_ = sb.String()
+	}
+}
+
+func Benchmark_strings_join_long_by_string_build(b *testing.B) {
+	var sb strings.Builder
+	sb.Grow(65536)
+	b.ResetTimer()
+	sb.WriteString(longArr[0])
+	for i := 0; i < b.N; i++ {
+		sb.Reset()
+		for _, s := range longArr[1:] {
+			sb.WriteString(",")
+			sb.WriteString(s)
+		}
+		_ = sb.String()
 	}
 }
