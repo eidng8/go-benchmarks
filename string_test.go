@@ -171,6 +171,7 @@ func Benchmark_string_builder_short(b *testing.B) {
 	var sb strings.Builder
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
+		_ = sb.String()
 	}
 }
 
@@ -178,6 +179,7 @@ func Benchmark_string_builder_fprintf_short(b *testing.B) {
 	var sb strings.Builder
 	for i := 0; i < b.N; i++ {
 		_, _ = fmt.Fprintf(&sb, "%s%d", shortStr, 1)
+		_ = sb.String()
 	}
 }
 
@@ -185,6 +187,7 @@ func Benchmark_string_builder_fprintf_float_short(b *testing.B) {
 	var sb strings.Builder
 	for i := 0; i < b.N; i++ {
 		_, _ = fmt.Fprintf(&sb, "%s%.10f", shortStr, 1.2)
+		_ = sb.String()
 	}
 }
 
@@ -193,6 +196,7 @@ func Benchmark_string_builder_Itoa_short(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
 		sb.WriteString(strconv.Itoa(1))
+		_ = sb.String()
 	}
 }
 
@@ -201,6 +205,7 @@ func Benchmark_string_builder_FormatInt_short(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
 		sb.WriteString(strconv.FormatInt(1, 10))
+		_ = sb.String()
 	}
 }
 
@@ -209,6 +214,7 @@ func Benchmark_string_builder_FormatFloat_short(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
 		sb.WriteString(strconv.FormatFloat(1, 'f', 10, 64))
+		_ = sb.String()
 	}
 }
 
@@ -219,6 +225,7 @@ func Benchmark_string_builder_grown_short(b *testing.B) {
 	b.StartTimer()
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
+		_ = sb.String()
 	}
 }
 
@@ -229,6 +236,7 @@ func Benchmark_string_builder_grown_fprintf_short(b *testing.B) {
 	b.StartTimer()
 	for i := 0; i < b.N; i++ {
 		_, _ = fmt.Fprintf(&sb, "%s%d", shortStr, 1)
+		_ = sb.String()
 	}
 }
 
@@ -239,6 +247,7 @@ func Benchmark_string_builder_grown_fprintf_float_short(b *testing.B) {
 	b.StartTimer()
 	for i := 0; i < b.N; i++ {
 		_, _ = fmt.Fprintf(&sb, "%s%.10f", shortStr, 1.2)
+		_ = sb.String()
 	}
 }
 
@@ -250,6 +259,7 @@ func Benchmark_string_builder_grown_Itoa_short(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
 		sb.WriteString(strconv.Itoa(1))
+		_ = sb.String()
 	}
 }
 
@@ -261,6 +271,7 @@ func Benchmark_string_builder_grown_FormatInt_short(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
 		sb.WriteString(strconv.FormatInt(1, 10))
+		_ = sb.String()
 	}
 }
 
@@ -272,6 +283,7 @@ func Benchmark_string_builder_grown_FormatFloat_short(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(shortStr)
 		sb.WriteString(strconv.FormatFloat(1, 'f', 10, 64))
+		_ = sb.String()
 	}
 }
 
@@ -330,6 +342,7 @@ func Benchmark_string_builder_long(b *testing.B) {
 	var sb strings.Builder
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(longStr)
+		_ = sb.String()
 	}
 }
 
@@ -337,6 +350,7 @@ func Benchmark_string_builder_fprintf_long(b *testing.B) {
 	var sb strings.Builder
 	for i := 0; i < b.N; i++ {
 		_, _ = fmt.Fprintf(&sb, "%s%d", longStr, 1)
+		_ = sb.String()
 	}
 }
 
@@ -344,6 +358,7 @@ func Benchmark_string_builder_fprintf_float_long(b *testing.B) {
 	var sb strings.Builder
 	for i := 0; i < b.N; i++ {
 		_, _ = fmt.Fprintf(&sb, "%s%.10f", longStr, 1.2)
+		_ = sb.String()
 	}
 }
 
@@ -352,6 +367,7 @@ func Benchmark_string_builder_Itoa_long(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(longStr)
 		sb.WriteString(strconv.Itoa(1))
+		_ = sb.String()
 	}
 }
 
@@ -360,6 +376,7 @@ func Benchmark_string_builder_FormatInt_long(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(longStr)
 		sb.WriteString(strconv.FormatInt(1, 10))
+		_ = sb.String()
 	}
 }
 
@@ -368,6 +385,7 @@ func Benchmark_string_builder_FormatFloat_long(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(longStr)
 		sb.WriteString(strconv.FormatFloat(1, 'f', 10, 64))
+		_ = sb.String()
 	}
 }
 
@@ -378,6 +396,7 @@ func Benchmark_string_builder_grown_long(b *testing.B) {
 	b.StartTimer()
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(longStr)
+		_ = sb.String()
 	}
 }
 
@@ -388,6 +407,7 @@ func Benchmark_string_builder_grown_fprintf_long(b *testing.B) {
 	b.StartTimer()
 	for i := 0; i < b.N; i++ {
 		_, _ = fmt.Fprintf(&sb, "%s%d", longStr, 1)
+		_ = sb.String()
 	}
 }
 
@@ -398,6 +418,7 @@ func Benchmark_string_builder_grown_fprintf_float_long(b *testing.B) {
 	b.StartTimer()
 	for i := 0; i < b.N; i++ {
 		_, _ = fmt.Fprintf(&sb, "%s%.10f", longStr, 1.2)
+		_ = sb.String()
 	}
 }
 
@@ -409,6 +430,7 @@ func Benchmark_string_builder_grown_Itoa_long(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(longStr)
 		sb.WriteString(strconv.Itoa(1))
+		_ = sb.String()
 	}
 }
 
@@ -420,6 +442,7 @@ func Benchmark_string_builder_grown_FormatInt_long(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(longStr)
 		sb.WriteString(strconv.FormatInt(1, 10))
+		_ = sb.String()
 	}
 }
 
@@ -431,6 +454,7 @@ func Benchmark_string_builder_grown_FormatFloat_long(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		sb.WriteString(longStr)
 		sb.WriteString(strconv.FormatFloat(1, 'f', 10, 64))
+		_ = sb.String()
 	}
 }
 
